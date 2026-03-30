@@ -9,7 +9,6 @@ namespace SocialNetworkingPlatform.Models
     /// </summary>
     public abstract class Platform
     {
-        // ✅ Interface төрөл
         protected readonly IUserRepository UserRepository;
         protected readonly IPostRepository PostRepository;
 
@@ -25,7 +24,6 @@ namespace SocialNetworkingPlatform.Models
         /// <summary>Нийтлэлүүд</summary>
         public IReadOnlyList<IPost> Posts => PostRepository.GetAll();
 
-        // ✅ Interface төрлөөр авна
         protected Platform(string name,
                            IUserRepository userRepository,
                            IPostRepository postRepository)

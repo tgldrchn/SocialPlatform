@@ -10,7 +10,7 @@ namespace SocialNetworkingPlatform.Repositories
     {
         private readonly List<IChat> _chats = new();
 
-        /// <summary>Нэмэх</summary>
+                /// <summary>Нэмэх</summary>
         public void Add(IChat chat) => _chats.Add(chat);
 
         /// <summary>Устгах</summary>

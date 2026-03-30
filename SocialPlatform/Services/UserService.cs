@@ -36,7 +36,7 @@ namespace SocialNetworkingPlatform.Services
             if (user == null) return null;
             // Нууц үг шалгах
 
-            if (user is User u && u.VerifyPassword(password))
+            if (user.VerifyPassword(password))
                 return user;
             return null;
         }

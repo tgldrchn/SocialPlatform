@@ -12,6 +12,7 @@ namespace SocialNetworkingPlatform.Interfaces
         string Email { get; }
         string Username { get; }
        
+        bool VerifyPassword(string password);
 
     }
 }

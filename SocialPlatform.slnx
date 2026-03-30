@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="DiscordApp.Winforms/DiscordApp.Winforms.csproj" Id="1f655787-935a-4de0-b494-87e87e4d264a" />
   <Project Path="DiscordApp/DiscordApp.csproj" />
   <Project Path="SocialPlatform/SocialPlatform.csproj" />
 </Solution>
