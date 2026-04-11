@@ -1,4 +1,4 @@
-﻿namespace SocialNetworkingPlatform.Interfaces
+﻿namespace SocialPlatform.Interfaces
 {
     /// <summary>
     /// Мессеж илгээх чадвартай объектын интерфэйс.

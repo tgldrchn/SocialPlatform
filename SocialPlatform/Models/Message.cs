@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SocialNetworkingPlatform.Enums;
-using SocialNetworkingPlatform.Interfaces;
+using SocialPlatform.Interfaces;
 
 namespace SocialNetworkingPlatform.Models
 {

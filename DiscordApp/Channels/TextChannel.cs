@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using SocialNetworkingPlatform.Interfaces;
 using SocialNetworkingPlatform.Models;
+using SocialPlatform.Interfaces;
 
 namespace DiscordApp.Channels
 {

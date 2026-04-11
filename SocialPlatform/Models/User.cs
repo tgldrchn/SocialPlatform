@@ -1,5 +1,5 @@
 ﻿using System;
-using SocialNetworkingPlatform.Interfaces;
+using SocialPlatform.Interfaces;
 
 namespace SocialNetworkingPlatform.Models
 {

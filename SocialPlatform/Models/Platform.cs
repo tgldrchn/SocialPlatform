@@ -1,5 +1,6 @@
 ﻿using SocialNetworkingPlatform.Interfaces;
 using SocialNetworkingPlatform.Repositories;
+using SocialPlatform.Interfaces;
 using System;
 
 namespace SocialNetworkingPlatform.Models

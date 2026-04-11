@@ -1,6 +1,6 @@
 ﻿using SocialNetworkingPlatform.Enums;
 
-namespace SocialNetworkingPlatform.Interfaces
+namespace SocialPlatform.Interfaces
 {
     /// <summary>
     /// Reaction хүлээн авах чадвартай объектын интерфэйс.

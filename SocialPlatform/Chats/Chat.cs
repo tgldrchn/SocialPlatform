@@ -1,5 +1,5 @@
-﻿using SocialNetworkingPlatform.Interfaces;
-using SocialNetworkingPlatform.Models;
+﻿using SocialNetworkingPlatform.Models;
+using SocialPlatform.Interfaces;
 
 namespace SocialNetworkingPlatform.Chats;
 

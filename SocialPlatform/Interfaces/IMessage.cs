@@ -1,7 +1,7 @@
 ﻿using SocialNetworkingPlatform.Enums;
 using System;
 
-namespace SocialNetworkingPlatform.Interfaces
+namespace SocialPlatform.Interfaces
 {
     /// <summary>
     /// Мессежийн интерфэйс.

@@ -6,6 +6,7 @@ using SocialNetworkingPlatform.Models;
 using SocialNetworkingPlatform.Repositories;
 using SocialNetworkingPlatform.Services;
 using SocialNetworkingPlatform.Enums;
+using SocialPlatform.Interfaces;
 
 namespace DiscordApp
 {

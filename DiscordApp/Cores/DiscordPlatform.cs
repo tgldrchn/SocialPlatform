@@ -2,6 +2,7 @@
 using SocialNetworkingPlatform.Interfaces;
 using SocialNetworkingPlatform.Models;
 using SocialNetworkingPlatform.Repositories;
+using SocialPlatform.Interfaces;
 
 namespace DiscordApp.Cores
 {

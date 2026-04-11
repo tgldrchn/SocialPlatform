@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SocialNetworkingPlatform.Interfaces
+namespace SocialPlatform.Interfaces
 {
     /// <summary>
     /// Чатын Repository интерфэйс

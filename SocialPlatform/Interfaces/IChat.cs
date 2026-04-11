@@ -1,4 +1,4 @@
-﻿namespace SocialNetworkingPlatform.Interfaces
+﻿namespace SocialPlatform.Interfaces
 {
     /// <summary>
     /// Чатын үндсэн интерфэйс.

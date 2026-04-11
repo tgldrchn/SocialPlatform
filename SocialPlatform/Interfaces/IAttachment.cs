@@ -1,7 +1,6 @@
-﻿
-using SocialNetworkingPlatform.Enums;
+﻿using SocialNetworkingPlatform.Enums;
 
-namespace SocialNetworkingPlatform.Interfaces
+namespace SocialPlatform.Interfaces
 {
     public interface IAttachment
     {

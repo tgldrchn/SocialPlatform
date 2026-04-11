@@ -1,5 +1,4 @@
-﻿
-namespace SocialNetworkingPlatform.Interfaces
+﻿namespace SocialPlatform.Interfaces
 {
     public interface ICommentable
     {

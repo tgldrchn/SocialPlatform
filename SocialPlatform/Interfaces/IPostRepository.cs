@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SocialPlatform.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace SocialNetworkingPlatform.Interfaces

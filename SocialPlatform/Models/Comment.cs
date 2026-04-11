@@ -1,5 +1,5 @@
 ﻿using SocialNetworkingPlatform.Enums;
-using SocialNetworkingPlatform.Interfaces;
+using SocialPlatform.Interfaces;
 
 namespace SocialNetworkingPlatform.Models
 {
@@ -10,6 +10,7 @@ namespace SocialNetworkingPlatform.Models
     {
         private readonly List<Reaction> _reactions = new();
         private readonly List<Attachment> _attachments = new();
+
         public Guid Id { get; private set; } = Guid.NewGuid();
         public Guid AuthorId { get; private set; }
         public Guid PostId { get; private set; }
@@ -23,6 +24,36 @@ namespace SocialNetworkingPlatform.Models
             PostId = postId;
             Content = content;
         }
+
+        private Comment(
+            Guid id,
+            Guid authorId,
+            Guid postId,
+            string content,
+            DateTime createdAt,
+            IEnumerable<Reaction>? reactions = null)
+        {
+            Id = id;
+            AuthorId = authorId;
+            PostId = postId;
+            Content = content;
+            CreatedAt = createdAt;
+
+            if (reactions != null)
+                _reactions.AddRange(reactions);
+        }
+
+        public static Comment FromPersistence(
+            Guid id,
+            Guid authorId,
+            Guid postId,
+            string content,
+            DateTime createdAt,
+            IEnumerable<Reaction>? reactions = null)
+        {
+            return new Comment(id, authorId, postId, content, createdAt, reactions);
+        }
+
         public void AddReaction(Guid userId, ReactionType emoji)
         {
             if (!_reactions.Exists(r => r.UserId == userId && r.Emoji == emoji))

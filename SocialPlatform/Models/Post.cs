@@ -1,5 +1,5 @@
 ﻿using SocialNetworkingPlatform.Enums;
-using SocialNetworkingPlatform.Interfaces;
+using SocialPlatform.Interfaces;
 
 namespace SocialNetworkingPlatform.Models
 {
@@ -8,9 +8,9 @@ namespace SocialNetworkingPlatform.Models
     /// </summary>
     public class Post : IPost, IReactable, ICommentable
     {
-
         private readonly List<IReaction> _reactions = new();
         private readonly List<IComment> _comments = new();
+
         public Guid Id { get; private set; } = Guid.NewGuid();
         public Guid AuthorId { get; private set; }
         public string Content { get; private set; }
@@ -30,6 +30,51 @@ namespace SocialNetworkingPlatform.Models
             Id = Guid.NewGuid();
         }
 
+        private Post(
+            Guid id,
+            Guid authorId,
+            string content,
+            DateTime createdAt,
+            DateTime updatedAt,
+            bool isDeleted,
+            IEnumerable<IComment>? comments = null,
+            IEnumerable<IReaction>? reactions = null)
+        {
+            Id = id;
+            AuthorId = authorId;
+            Content = content;
+            CreatedAt = createdAt;
+            UpdatedAt = updatedAt;
+            IsDeleted = isDeleted;
+
+            if (comments != null)
+                _comments.AddRange(comments);
+
+            if (reactions != null)
+                _reactions.AddRange(reactions);
+        }
+
+        public static Post FromPersistence(
+            Guid id,
+            Guid authorId,
+            string content,
+            DateTime createdAt,
+            DateTime updatedAt,
+            bool isDeleted,
+            IEnumerable<IComment>? comments = null,
+            IEnumerable<IReaction>? reactions = null)
+        {
+            return new Post(
+                id,
+                authorId,
+                content,
+                createdAt,
+                updatedAt,
+                isDeleted,
+                comments,
+                reactions);
+        }
+
         /// <summary>Пост засах</summary>
         public void EditContent(string newContent)
         {
@@ -44,7 +89,6 @@ namespace SocialNetworkingPlatform.Models
             UpdatedAt = DateTime.UtcNow;
         }
 
-        // IReactable
         public void AddReaction(Guid userId, ReactionType emoji)
         {
             if (!_reactions.Exists(r => r.UserId == userId && r.Emoji == emoji))
@@ -60,7 +104,6 @@ namespace SocialNetworkingPlatform.Models
         public bool HasReacted(Guid userId, ReactionType emoji) =>
             _reactions.Exists(r => r.UserId == userId && r.Emoji == emoji);
 
-        // ICommentable
         public void AddComment(Guid userId, string content) =>
             _comments.Add(new Comment(userId, Id, content));
 
@@ -68,9 +111,6 @@ namespace SocialNetworkingPlatform.Models
             _comments.RemoveAll(c => c.Id == commentId);
 
         public override string ToString() =>
-            $"[Post] {Content} | " +
-            $"reactions:{_reactions.Count} " +
-            $"comments:{_comments.Count}" +
-            $"{(IsDeleted ? " (deleted)" : "")}";
+            $"[Post] {Content} | reactions:{_reactions.Count} comments:{_comments.Count}{(IsDeleted ? " (deleted)" : "")}";
     }
 }

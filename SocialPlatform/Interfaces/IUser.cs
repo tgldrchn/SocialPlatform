@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-namespace SocialNetworkingPlatform.Interfaces
+namespace SocialPlatform.Interfaces
 {
     public interface IUser
     {
